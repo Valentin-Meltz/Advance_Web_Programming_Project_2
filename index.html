@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Computed Properties</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
+            <nav class="main-nav">
+                <ul>
+                    <li class="nav-item"><a class="nav-link" href="#">Page 1</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Page 2</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Page 3</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-title">
+                <h1>VYS - Informatique</h1>
+                <h2>The futur of computer</h2>  
+            </div>
+        </header>
+
+        <main id="app" class="main-content">
+            <h1>{{ brand + ' ' + product }}</h1>
+            <h2>{{ title }} </h2>
+            <section class="card">
+                <div>
+                    <img :src="image" alt="Casio Piano" class="img-centre" :class="{ 'grayed-out-img': !inStock}">
+                </div>
+                <p>{{ product }} {{ description }}. To learn more visit <a :href="url" target="_blank">"LDLC"</a> Official page!</p>
+
+                <div class="product-status">
+                    <p>
+                        Item Status:
+                        <span v-if="inStock">In Stock</span>
+                        <span v-else>Out of Stock</span>
+                    </p>
+                    <p v-show="inStock">
+                        The item is available for pickup from our main store or shipped for free to any
+                        address!
+                    </p>
+                    <p v-else-if="inventory <=10 && inventory > 0">Hurry up, this item is almost sold out!</p>
+                    <p v-if="inventory>0 && onSale">This item is currently on sale! Don't miss your chance</p>
+
+                    <h3>Explore the following...</h3>
+                    <ul class="ul-category">
+                        <li v-for="category in categories">{{ category }}</li>
+                    </ul>
+
+                    <h3 :style="styles">Discover Product</h3>
+                    <div class="container">
+                        <div v-for="option in options" :key="option.id" @mouseover="updateImage(option.image)"
+                             class="img-circle">
+                          <img :src="option.colorImage" alt="Couleur" />
+                        </div>
+                      </div>     
+                </div>
+            </section>
+        </main>
+
+        <footer>&copy; <span id="year"></span> - VYS - Informatique</footer>
+    </div>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        const mountedApp = app.mount('#app');
+    </script>
+    <body>
+</html>

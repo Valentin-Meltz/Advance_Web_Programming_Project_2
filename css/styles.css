@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, "sans-serif";
+}
+
+.wrapper {
+    max-width: 1400px;
+    margin: auto;
+}
+
+header, footer {
+    background-color: darkslategrey;
+    color: aliceblue;
+    text-align: center;
+    padding: 5px 0;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 1%;
+}
+
+.nav-item {
+    list-style-type: none;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #fff;
+}
+
+.nav-link:hover {
+    text-decoration: underline;
+}
+
+.main-content {
+    margin: 0 auto;
+    background-color: rgb(230, 248, 247);
+    padding: 15px;
+}
+
+.card {
+    background: #ffffff;
+    color: #495057;
+    margin: 20px 0;
+    padding: 30px 30px;
+    box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1), 0 0 0 2px rgb(255, 255, 255),
+        0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.card p {
+    font-size: 1.5em;
+    margin: 5px;
+}
+
+img {
+    max-width: 100%;
+}
+
+.img-centre {
+    display: block;
+    margin: auto;
+}
+
+.grayed-out-img {
+    opacity: 0.3;
+}
+
+.ul-category {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+}
+
+.container {
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.img-circle {
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    border-radius: 50%;
+    position: relative;
+}
+
+.img-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+@media only screen and (max-width: 600px) {
+    header {
+        background-color: darkkhaki;
+        color: rgb(87, 83, 28);
+    }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 900px) {
+    header {
+        background-color: darkorange;
+    }
+
+    main.main-content {
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 901px) {
+    nav.main-nav {
+        width: 10%;
+    }
+}
+
+@media print {
+    header,
+    main.main-content,
+    footer {
+        background: #fff;
+        color: #000;
+        border: 1px solid #000;
+    }
+}
