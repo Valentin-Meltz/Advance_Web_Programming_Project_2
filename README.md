@@ -17,6 +17,6 @@ Welcome to the “VYS - Informatique” project, developed as part of ILAC with 
   •	Frontend Framework: Vue.js 3\
   •	Styling: css
 
-#### **Live Demo :**
+#### **Live Demo :** https://valentin-meltz.github.io/Advance_Web_Programming_Project_2/
 
 #### **Groupe 1 :** El Halfa Samy, Meltz Valentin, Ndongo Yrvane
